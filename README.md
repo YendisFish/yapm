@@ -1,9 +1,8 @@
 # Yet Another Package Manager
 
-Yapm is a package manager written in Go with the
-intention of being simple yet modern. It utilizes 
-the mpr standard, while also delivering software 
-to you as well.
+Yapm is a package manager written in Go, designed to be
+both simple and modern. It utilizes the mpr standard, while 
+also delivering software to you as well.
 
 # How do build
 
