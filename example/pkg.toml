@@ -1,0 +1,13 @@
+[Package]
+Name = "yapm"
+Author = "YendisFish"
+Version = "0.0.1"
+Repository = ["https://somegit.com/SomeUser/somerepo", "https://somegit2.com/SomeUser/somerepo2"]
+
+[Dependencies]
+foo = ["binary", "mpr"]
+im-a-dependency = ["script", "https://somesite.com/api/v1/something"]
+
+[Permissions]
+Read-Windows = []
+Read-Linux = ["/etc/firefox/*.conf"]
