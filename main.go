@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"yapm/install"
+	"yapm/lib"
+	"yapm/logger"
 	make "yapm/make"
 	"yapm/pack"
 )
@@ -23,7 +25,8 @@ func main() {
 
 func ResolveArgs(args []string) error {
 	if len(args) == 0 {
-		return fmt.Errorf("yapm expected an argument!")
+		logger.Error(logger.CreateLogEntry("yapm expected an argument!"))
+		return fmt.Errorf("")
 	}
 
 	switch args[0] {
@@ -41,13 +44,7 @@ func ResolveArgs(args []string) error {
 }
 
 func Initialize() {
-	homedir, err := os.UserHomeDir()
-
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	homedir = filepath.Join(homedir, ".yapm")
+	homedir := lib.GetHomeDir()
 
 	inf, err := os.Stat(homedir)
 

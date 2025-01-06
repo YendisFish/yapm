@@ -6,7 +6,7 @@ import (
 	"github.com/fatih/color"
 )
 
-func Error(entry *LogEntry) {
+func Error(entry *LogEntry, err ...bool) {
 	c := color.New(color.FgRed, color.Bold)
 
 	c.Print("Error: ")
@@ -16,6 +16,12 @@ func Error(entry *LogEntry) {
 		c.Print("    " + k + ": ")
 		fmt.Println(v)
 	}
+
+	if len(err) != 0 && !err[0] {
+		return
+	}
+
+	panic("")
 }
 
 func Info(entry *LogEntry) {
